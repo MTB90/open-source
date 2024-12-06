@@ -3,6 +3,10 @@ name: PR CI
 on:
   pull_request_target:
 
+  workflow_run:
+    workflows: ["Label when reviewed"]
+    types: ['completed']
+
 # Limit CI to cancel previous runs in the same PR
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
