@@ -1,7 +1,12 @@
 name: PR CI
 
 on:
-  pull_request:
+  pull_request_review:
+    types: [submitted]
+
+  workflow_run:
+    workflows: ["Label when reviewed"]
+    types: ['completed']
 
 # Limit CI to cancel previous runs in the same PR
 concurrency:
@@ -19,6 +24,3 @@ jobs:
 
       - name: Run Tests
         run: echo "Run tests"
-
-      - name: Get Secrets
-        run: echo "Get secrets"
