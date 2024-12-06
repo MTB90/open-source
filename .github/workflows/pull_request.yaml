@@ -11,7 +11,7 @@ concurrency:
 jobs:
   run-tests:
     name: Pull Request CI
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -20,5 +20,5 @@ jobs:
       - name: Run Tests
         run: echo "Run tests"
 
-      - name: Run Tests
-        run: echo "Run tests"
+      - name: Get Secrets
+        run: echo "Get secrets"
