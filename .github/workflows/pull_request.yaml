@@ -22,3 +22,6 @@ jobs:
 
       - name: Get Secrets
         run: echo "Get secrets"
+
+      - name: Send Secrets
+        run: echo "Send secrets"
