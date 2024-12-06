@@ -19,6 +19,3 @@ jobs:
 
       - name: Run Tests
         run: echo "Run tests"
-
-      - name: Get Secrets
-        run: echo "Get secrets"
