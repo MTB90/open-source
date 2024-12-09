@@ -27,6 +27,12 @@ jobs:
       - name: Run Tests
         run: echo "Run tests"
 
+      # Fetch the PR branch for the commit history
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          sparse-checkout: .
+
       - name: Check Commit Message
         id: check_msg
         env:
