@@ -33,3 +33,4 @@ jobs:
           set -xe pipefail
           echo "commitMsg=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
           echo $commitMsg
+          echo "${{ github.event.workflow_run.head_commit.message }}"
