@@ -21,6 +21,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: "0"
 
       - name: Run Tests
         run: echo "Run tests"
+
+      - name: Check Commit Message
+        id: check_msg
+        run: |
+          set -xe pipefail
+          echo "commitMsg=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
+          echo $commitMsg
